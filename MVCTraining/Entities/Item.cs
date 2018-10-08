@@ -33,8 +33,7 @@ namespace Memberships.Entities
         {
             get
             {
-                return HTML == null || HTML.Length < 50 ?
-                  HTML : HTML.Substring(0, 50);
+                return HTML == null || HTML.Length < 50 ? HTML : HTML.Substring(0, 50);
             }
         }
         public int ProductId { get; set; }
