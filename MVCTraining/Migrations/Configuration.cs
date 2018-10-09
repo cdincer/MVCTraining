@@ -9,7 +9,9 @@ namespace MVCTraining.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;//Helps with automatic migrations instead of manual ones.
+            AutomaticMigrationDataLossAllowed = true; //Bypassing safeguard for data loss. Not usable in production systems.
+
         }
 
         protected override void Seed(MVCTraining.Models.ApplicationDbContext context)
