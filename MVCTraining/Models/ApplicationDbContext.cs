@@ -14,8 +14,8 @@ namespace MVCTraining.Models
         public DbSet<Section> Sections { get; set; }
         public DbSet<Part> Parts { get; set;}
         public DbSet<ItemType> ItemTypes { get; set; }
-        public DbSet<Item> Item { get; set; }
-
+        public DbSet<Item> Items { get; set; }
+        public DbSet<Product> Products { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
