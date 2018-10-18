@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using MVCTraining.Models.Entities;
 
 namespace MVCTraining.Models
 {
@@ -17,6 +18,7 @@ namespace MVCTraining.Models
         public DbSet<Item> Items { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductType> ProductTypes { get; set; }
+        public DbSet<Subscription> Subscriptions { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
