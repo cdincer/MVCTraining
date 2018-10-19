@@ -20,6 +20,7 @@ namespace MVCTraining.Models
         public DbSet<ProductType> ProductTypes { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
         public DbSet<ProductLinkText> ProductLinkTexts { get; set; }
+        public DbSet<ProductItem> ProductItems { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
