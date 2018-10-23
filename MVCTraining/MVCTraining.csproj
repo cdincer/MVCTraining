@@ -215,6 +215,7 @@
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Entities\Subscription.cs" />
     <Compile Include="Models\Entities\SubscriptionProduct.cs" />
+    <Compile Include="Models\Entities\UserSubscription.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
