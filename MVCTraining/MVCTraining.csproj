@@ -250,6 +250,11 @@
     <Content Include="Areas\Admin\Views\Shared\_CreateButtonPartial.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_SmallButtonPartial.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_TableButtonsPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\Part\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Part\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Part\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Part\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Part\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -300,7 +305,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\Part\" />
     <Folder Include="Content\Images\" />
     <Folder Include="Content\Logos\" />
   </ItemGroup>
