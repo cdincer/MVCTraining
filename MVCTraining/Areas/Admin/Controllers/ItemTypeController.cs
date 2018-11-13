@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
@@ -16,19 +17,19 @@ namespace MVCTraining.Areas.Admin.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Admin/ItemType
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View(db.ItemTypes.ToList());
+            return View(await db.ItemTypes.ToListAsync());
         }
 
         // GET: Admin/ItemType/Details/5
-        public ActionResult Details(int? id)
+        public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemType itemType = db.ItemTypes.Find(id);
+            ItemType itemType = await db.ItemTypes.FindAsync(id);
             if (itemType == null)
             {
                 return HttpNotFound();
@@ -47,12 +48,12 @@ namespace MVCTraining.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title")] ItemType itemType)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Title")] ItemType itemType)
         {
             if (ModelState.IsValid)
             {
                 db.ItemTypes.Add(itemType);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
@@ -60,13 +61,13 @@ namespace MVCTraining.Areas.Admin.Controllers
         }
 
         // GET: Admin/ItemType/Edit/5
-        public ActionResult Edit(int? id)
+        public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemType itemType = db.ItemTypes.Find(id);
+            ItemType itemType = await db.ItemTypes.FindAsync(id);
             if (itemType == null)
             {
                 return HttpNotFound();
@@ -79,25 +80,25 @@ namespace MVCTraining.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title")] ItemType itemType)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Title")] ItemType itemType)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(itemType).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             return View(itemType);
         }
 
         // GET: Admin/ItemType/Delete/5
-        public ActionResult Delete(int? id)
+        public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ItemType itemType = db.ItemTypes.Find(id);
+            ItemType itemType = await db.ItemTypes.FindAsync(id);
             if (itemType == null)
             {
                 return HttpNotFound();
@@ -108,11 +109,11 @@ namespace MVCTraining.Areas.Admin.Controllers
         // POST: Admin/ItemType/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            ItemType itemType = db.ItemTypes.Find(id);
+            ItemType itemType = await db.ItemTypes.FindAsync(id);
             db.ItemTypes.Remove(itemType);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
