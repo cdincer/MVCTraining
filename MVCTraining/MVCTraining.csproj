@@ -284,6 +284,11 @@
     <Content Include="Areas\Admin\Views\Item\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Item\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Item\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -335,7 +340,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\ProductTypes\" />
-    <Folder Include="Areas\Admin\Views\Product\" />
     <Folder Include="Content\Images\" />
     <Folder Include="Content\Logos\" />
   </ItemGroup>
