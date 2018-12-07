@@ -23,7 +23,7 @@ namespace MVCTraining.Areas.Admin.Controllers
             var products = await db.Products.ToListAsync();
 
             var model = products.Convert(db);
-            return View(model);
+            return View(model.Result);
         }
 
         // GET: Admin/Product/Details/5

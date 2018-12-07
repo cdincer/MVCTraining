@@ -24,7 +24,7 @@
             @Html.DisplayNameFor(model => model.ProductLinkTexts)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ProductType)
+            @Html.DisplayNameFor(model => model.ProductTypes)
         </th>
     
    
@@ -42,9 +42,13 @@
       
         <td>
             @Html.DisplayFor(modelItem => item.ProductLinkTexts)
+            (@{@Html.DisplayFor(modelItem => item.ProductLinkTextId)})
+
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ProductType)
+            @Html.DisplayFor(modelItem => item.ProductTypes)
+            (@{@Html.DisplayFor(modelItem => item.ProductTypeId)})
+
         </td>
     
      
