@@ -21,15 +21,13 @@
         </th>
     
         <th>
-            @Html.DisplayNameFor(model => model.HTML)
+            @Html.DisplayNameFor(model => model.ProductLinkTexts)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.WaitDays)
+            @Html.DisplayNameFor(model => model.ProductType)
         </th>
     
-        <th>
-            @Html.DisplayNameFor(model => model.IsFree)
-        </th>
+   
         <th></th>
     </tr>
 
@@ -43,16 +41,13 @@
         </td>
       
         <td>
-            @Html.DisplayFor(modelItem => item.HTML)
+            @Html.DisplayFor(modelItem => item.ProductLinkTexts)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.WaitDays)
+            @Html.DisplayFor(modelItem => item.ProductType)
         </td>
     
-        <td>
-            @Html.DisplayFor(modelItem => item.IsFree)
-        </td>
-      
+     
         @Html.Partial("_TableButtonsPartial",
                new SmallButtonModel { Id = item.Id })
     </tr>
