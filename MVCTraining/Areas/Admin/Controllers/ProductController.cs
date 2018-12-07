@@ -8,7 +8,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVCTraining.Models;
-using Memberships.Entities;
+using Training.Entities;
+using MVCTraining.Areas.Admin.Extensions;
 
 namespace MVCTraining.Areas.Admin.Controllers
 {
@@ -19,7 +20,10 @@ namespace MVCTraining.Areas.Admin.Controllers
         // GET: Admin/Product
         public async Task<ActionResult> Index()
         {
-            return View(await db.Products.ToListAsync());
+            var products = await db.Products.ToListAsync();
+
+            var model = products.Convert(db);
+            return View(model);
         }
 
         // GET: Admin/Product/Details/5

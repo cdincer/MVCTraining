@@ -1,4 +1,4 @@
-﻿using Memberships.Entities;
+﻿using Training.Entities;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity;
 using System;

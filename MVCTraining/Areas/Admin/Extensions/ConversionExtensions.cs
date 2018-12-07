@@ -1,4 +1,4 @@
-﻿using Memberships.Entities;
+﻿using Training.Entities;
 using MVCTraining.Areas.Admin.Models;
 using MVCTraining.Models;
 using System;

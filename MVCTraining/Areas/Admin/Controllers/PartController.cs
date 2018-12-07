@@ -8,7 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVCTraining.Models;
-using Memberships.Entities;
+using Training.Entities;
 
 namespace MVCTraining.Areas.Admin.Controllers
 {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Memberships.Entities
+namespace Training.Entities
 {
     [Table("Item")]
     public class Item
