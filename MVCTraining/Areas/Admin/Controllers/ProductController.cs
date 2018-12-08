@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using MVCTraining.Models;
 using Training.Entities;
 using MVCTraining.Areas.Admin.Extensions;
+using MVCTraining.Areas.Admin.Models;
 
 namespace MVCTraining.Areas.Admin.Controllers
 {
@@ -22,8 +23,8 @@ namespace MVCTraining.Areas.Admin.Controllers
         {
             var products = await db.Products.ToListAsync();
 
-            var model = products.Convert(db);
-            return View(model.Result);
+            var model = await products.Convert(db);
+            return View(model);
         }
 
         // GET: Admin/Product/Details/5
@@ -42,9 +43,17 @@ namespace MVCTraining.Areas.Admin.Controllers
         }
 
         // GET: Admin/Product/Create
-        public ActionResult Create()
+        public async Task<ActionResult> Create()
         {
-            return View();
+            var model = new ProductModel
+            {
+
+                ProductLinkTexts = await db.ProductLinkTexts.ToListAsync(),
+                ProductTypes = await db.ProductTypes.ToListAsync(),
+
+
+            };
+            return View(model);
         }
 
         // POST: Admin/Product/Create
