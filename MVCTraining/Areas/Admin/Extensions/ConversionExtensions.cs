@@ -27,6 +27,7 @@ namespace MVCTraining.Areas.Admin.Extensions
                        Id = p.Id,
                        Title = p.Title,
                        Description = p.Description,
+                       ImageUrl = p.ImageUrl,
                        ProductLinkTextId = p.ProductLinkTextId,
                        ProductTypeId = p.ProductTypeId,
                        ProductLinkTexts = texts,
