@@ -85,7 +85,10 @@ namespace MVCTraining.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            return View(product);
+            var prod = new List<Product>();
+            prod.Add(product);
+            var ProductModelV = await prod.Convert(db);
+            return View(ProductModelV.First());
         }
 
         // POST: Admin/Product/Edit/5
