@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace MVCTraining.Models.Entities
     public string Description { get; set; }
 
     [MaxLength(2048)]
+    [DisplayName("Registration Code")]
     public string RegistrationCode { get; set; }
 
     }
