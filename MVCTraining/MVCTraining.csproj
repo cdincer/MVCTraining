@@ -206,6 +206,7 @@
     <Compile Include="Areas\Admin\Controllers\SectionController.cs" />
     <Compile Include="Areas\Admin\Controllers\SubscriptionController.cs" />
     <Compile Include="Areas\Admin\Extensions\ConversionExtensions.cs" />
+    <Compile Include="Areas\Admin\Models\ProductItemModel.cs" />
     <Compile Include="Areas\Admin\Models\ProductModel.cs" />
     <Compile Include="Areas\Admin\Models\SmallButtonModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
