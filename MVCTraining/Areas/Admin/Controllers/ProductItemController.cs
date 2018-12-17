@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using MVCTraining.Models;
 using Training.Entities;
+using MVCTraining.Areas.Admin.Models;
 
 namespace MVCTraining.Areas.Admin.Controllers
 {
@@ -36,11 +37,19 @@ namespace MVCTraining.Areas.Admin.Controllers
             }
             return View(productItem);
         }
-
+            
         // GET: Admin/ProductItem/Create
-        public ActionResult Create()
+        public async Task<ActionResult> Create()
         {
-            return View();
+            var model = new ProductItemModel
+            {
+
+                Items = await db.Items.ToListAsync(),
+                Products = await db.Products.ToListAsync(),
+
+
+            };
+            return View(model);
         }
 
         // POST: Admin/ProductItem/Create
