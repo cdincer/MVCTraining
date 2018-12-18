@@ -12,6 +12,7 @@ namespace MVCTraining.Areas.Admin.Extensions
 {
     public static  class ConversionExtensions
     {
+        //For Product Index Page
         public  static async Task<IEnumerable<ProductModel>> Convert(this IEnumerable<Product> products, ApplicationDbContext db)
         {
             if (products.Count().Equals(0))
@@ -37,7 +38,7 @@ namespace MVCTraining.Areas.Admin.Extensions
         }
 
 
-
+        //For Product Detail Page
         public static async Task<ProductModel> Convert(this Product product, ApplicationDbContext db)
         {
 
@@ -67,5 +68,23 @@ namespace MVCTraining.Areas.Admin.Extensions
         }
 
 
+        //For ProductItem Index Page
+        public static async Task<IEnumerable<ProductItemModel>> Convert(this IQueryable<ProductItem> productItems, ApplicationDbContext db)
+        {
+            if (productItems.Count().Equals(0))
+                return new List<ProductItemModel>();
+
+
+
+            return await (from pi in productItems
+                          select new ProductItemModel
+                          {
+                              ItemId = pi.ItemId,
+                              ProductId = pi.ProductId,
+                              ItemTitle = db.Items.FirstOrDefault(i=>i.Id.Equals(pi.ItemId)).Title,
+                              ProductTitle = db.Products.FirstOrDefault(i => i.Id.Equals(pi.ProductId)).Title
+
+                          }).ToListAsync();
+        }
     }
 }

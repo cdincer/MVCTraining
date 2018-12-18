@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using MVCTraining.Models;
 using Training.Entities;
 using MVCTraining.Areas.Admin.Models;
+using MVCTraining.Areas.Admin.Extensions;
 
 namespace MVCTraining.Areas.Admin.Controllers
 {
@@ -20,7 +21,7 @@ namespace MVCTraining.Areas.Admin.Controllers
         // GET: Admin/ProductItem
         public async Task<ActionResult> Index()
         {
-            return View(await db.ProductItems.ToListAsync());
+            return View(await db.ProductItems.Convert(db));
         }
 
         // GET: Admin/ProductItem/Details/5
