@@ -86,5 +86,23 @@ namespace MVCTraining.Areas.Admin.Extensions
 
                           }).ToListAsync();
         }
+        //For ProductItem Edit Page
+        public static async Task<ProductItemModel> Convert(this ProductItem productitem, ApplicationDbContext db)
+        {
+
+            var model = new ProductItemModel
+            {
+                ItemId = productitem.ItemId,
+                ProductId = productitem.ProductId,
+                Items = await db.Items.ToListAsync(),
+                Products = await db.Products.ToListAsync()
+
+            };
+
+         
+
+            return model;
+
+        }
     }
 }

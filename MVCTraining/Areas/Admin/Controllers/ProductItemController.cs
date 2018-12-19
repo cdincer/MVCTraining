@@ -82,7 +82,7 @@ namespace MVCTraining.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            return View(productItem);
+            return View(productItem.Convert(db));
         }
 
         // POST: Admin/ProductItem/Edit/5
