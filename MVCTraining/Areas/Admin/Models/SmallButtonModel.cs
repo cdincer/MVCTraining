@@ -24,13 +24,13 @@ namespace MVCTraining.Areas.Admin.Models
                 if (Id != null && Id > 0)
                     param.Append(String.Format("{0}={1}&","id",Id));
 
-                if (ItemId != null && Id > 0)
+                if (ItemId != null && ItemId > 0)
                     param.Append(String.Format("{0}={1}&", "ItemId", ItemId));
 
-                if (ProductId != null && Id > 0)
+                if (ProductId != null && ProductId > 0)
                     param.Append(String.Format("{0}={1}&", "ProductId", ProductId));
 
-                if (SubscriptionId != null && Id > 0)
+                if (SubscriptionId != null && SubscriptionId > 0)
                     param.Append(String.Format("{0}={1}&", "SubscriptionId", SubscriptionId));
 
                 return param.ToString().Substring(0, param.Length - 1);

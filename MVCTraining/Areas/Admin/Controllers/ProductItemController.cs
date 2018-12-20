@@ -71,19 +71,21 @@ namespace MVCTraining.Areas.Admin.Controllers
         }
 
         // GET: Admin/ProductItem/Edit/5
-        public async Task<ActionResult> Edit(int? id)
+        public async Task<ActionResult> Edit(int? ItemId, int? ProductId)
         {
-            if (id == null)
+            if (ItemId == null || ProductId==null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProductItem productItem = await db.ProductItems.FindAsync(id);
+            ProductItem productItem = await GetProductItem(ItemId,ProductId);
             if (productItem == null)
             {
                 return HttpNotFound();
             }
-            return View(productItem.Convert(db));
+            return View(await productItem.Convert(db));
         }
+
+     
 
         // POST: Admin/ProductItem/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -99,6 +101,21 @@ namespace MVCTraining.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
             return View(productItem);
+        }
+
+        private async Task<ProductItem> GetProductItem(int? itemId, int? productId)
+        {
+            try
+            {
+                int itmId = 0, prdId = 0;
+                int.TryParse(itemId.ToString(), out itmId);
+                int.TryParse(productId.ToString(), out prdId);
+                var productItem = await db.ProductItems.FirstOrDefaultAsync(
+                    pi => pi.ProductId.Equals(prdId) && pi.ItemId.Equals(itmId));
+                return productItem;
+
+            }
+            catch { return null; }
         }
 
         // GET: Admin/ProductItem/Delete/5
