@@ -88,16 +88,18 @@ namespace MVCTraining.Areas.Admin.Extensions
                           }).ToListAsync();
         }
         //For ProductItem Edit Page
-        public static async Task<ProductItemModel> Convert(this ProductItem productitem, ApplicationDbContext db)
+        public static async Task<ProductItemModel> Convert(this ProductItem productitem, ApplicationDbContext db,
+            bool addListData = true)
         {
 
             var model = new ProductItemModel
             {
                 ItemId = productitem.ItemId,
                 ProductId = productitem.ProductId,
-                Items = await db.Items.ToListAsync(),
-                Products = await db.Products.ToListAsync()
-
+                Items = addListData ? await db.Items.ToListAsync() : null,
+                Products = addListData ? await db.Products.ToListAsync() : null,
+                ItemTitle = (await db.Items.FirstOrDefaultAsync(i => i.Id.Equals(productitem.ItemId))).Title,
+                ProductTitle = (await db.Products.FirstOrDefaultAsync(p => p.Id.Equals(productitem.ProductId))).Title
             };
 
          

@@ -1,4 +1,4 @@
-﻿@model Training.Entities.ProductItem
+﻿@model MVCTraining.Areas.Admin.Models.ProductItemModel
 
 @{
     ViewBag.Title = "Details";
@@ -10,9 +10,13 @@
     <h4>ProductItem</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(m =>m.ItemTitle)</dt>
+        <dd>@Html.DisplayFor(m => m.ItemTitle)</dd>
+        <dt>@Html.DisplayNameFor(m => m.ProductTitle)</dt>
+        <dd>@Html.DisplayFor(m => m.ProductTitle)</dd>
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) 
+    @Html.Partial("_BackToListButtonPartial")
 </p>
