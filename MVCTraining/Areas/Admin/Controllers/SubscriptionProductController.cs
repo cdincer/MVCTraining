@@ -125,5 +125,21 @@ namespace MVCTraining.Areas.Admin.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+        private async Task<SubscriptionProduct> GetSubscriptionProduct(int? subscriptionId, int? productId)
+        {
+            try
+            {
+                int subscId = 0, prdId = 0;
+                int.TryParse(subscriptionId.ToString(), out subscId);
+                int.TryParse(productId.ToString(), out prdId);
+                var subcriptionProduct = await db.SubscriptionProducts.FirstOrDefaultAsync(
+                    pi => pi.ProductId.Equals(prdId) && pi.SubscriptionId.Equals(subscId));
+                return subcriptionProduct;
+
+            }
+            catch { return null; }
+        } 
     }
 }
