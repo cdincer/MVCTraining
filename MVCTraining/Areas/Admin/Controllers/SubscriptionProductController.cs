@@ -81,7 +81,7 @@ namespace MVCTraining.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            return View(subscriptionProduct.Convert(db));
+            return View(await subscriptionProduct.Convert(db));
         }
 
         // POST: Admin/SubscriptionProduct/Edit/5
@@ -114,7 +114,7 @@ namespace MVCTraining.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            return View(subscriptionProduct.Convert(db));
+            return View(await subscriptionProduct.Convert(db));
         }
 
         // POST: Admin/SubscriptionProduct/Delete/5

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MVCTraining.Areas.Admin.Models.ProductItemModel>
+﻿@model IEnumerable<MVCTraining.Areas.Admin.Models.SubscriptionProductModel>
 
 @using MVCTraining.Areas.Admin.Models;
 
@@ -17,7 +17,7 @@
             @Html.DisplayNameFor(model => model.ProductTitle)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ItemTitle)
+            @Html.DisplayNameFor(model => model.SubscriptionTitle)
         </th>
         <th></th>
     </tr>
@@ -29,11 +29,11 @@
                 @Html.DisplayFor(modelItem => item.ProductTitle)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ItemTitle)
+                @Html.DisplayFor(modelItem => item.SubscriptionTitle)
             </td>
 
                 @Html.Partial("_TableButtonsPartial",
-            new SmallButtonModel { ItemId = item.ItemId, ProductId = item.ProductId })
+            new SmallButtonModel { SubscriptionId = item.SubscriptionId, ProductId = item.ProductId })
         </tr>
     }
 

@@ -1,4 +1,4 @@
-﻿@model MVCTraining.Areas.Admin.Models.ProductItemModel
+﻿@model MVCTraining.Areas.Admin.Models.SubscriptionProductModel
 
 @using MVCTraining.Areas.Admin.Models
 @{
@@ -8,16 +8,16 @@
 <h2>Details</h2>
 
 <div>
-    <h4>ProductItem</h4>
+    <h4>Subscription Product</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>@Html.DisplayNameFor(m =>m.ItemTitle)</dt>
-        <dd>@Html.DisplayFor(m => m.ItemTitle)</dd>
+        <dt>@Html.DisplayNameFor(m =>m.SubscriptionTitle)</dt>
+        <dd>@Html.DisplayFor(m => m.SubscriptionTitle)</dd>
         <dt>@Html.DisplayNameFor(m => m.ProductTitle)</dt>
         <dd>@Html.DisplayFor(m => m.ProductTitle)</dd>
     </dl>
 </div>
 <p>
-    @Html.Partial("_EditButtonDetailPartial",new EditButtonModel { ItemId = Model.ItemId,ProductId = Model.ProductId})
+    @Html.Partial("_EditButtonDetailPartial",new EditButtonModel { SubscriptionId = Model.SubscriptionId, ProductId = Model.ProductId})
     @Html.Partial("_BackToListButtonPartial")
 </p>
