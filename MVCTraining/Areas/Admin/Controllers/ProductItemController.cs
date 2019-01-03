@@ -14,6 +14,7 @@ using MVCTraining.Areas.Admin.Extensions;
 
 namespace MVCTraining.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ProductItemController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

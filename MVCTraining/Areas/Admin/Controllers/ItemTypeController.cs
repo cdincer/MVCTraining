@@ -12,6 +12,7 @@ using Training.Entities;
 
 namespace MVCTraining.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ItemTypeController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

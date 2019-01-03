@@ -14,6 +14,7 @@ using MVCTraining.Areas.Admin.Models;
 
 namespace MVCTraining.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class SubscriptionProductController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
