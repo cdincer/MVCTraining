@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MVCTraining.Models;
+using System.Collections.Generic;
+using MVCTraining.Extensions;
 
 namespace MVCTraining.Controllers
 {
@@ -481,5 +483,14 @@ namespace MVCTraining.Controllers
             }
         }
         #endregion
+
+        public async Task<ActionResult> Index()
+        {
+            var users = new List<UserViewModel>();
+
+            await users.GetUsers();
+
+            return View(users);
+        }
     }
 }
