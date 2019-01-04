@@ -9,7 +9,7 @@ namespace MVCTraining.Models
     public class UserViewModel
     {
         [Display(Name = "User Id")]
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         [Required]
         [EmailAddress]
