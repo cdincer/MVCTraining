@@ -6,29 +6,54 @@
 <div class="btn-group" role="group">
     @Html.Partial("_SmallButtonPartial",
   new SmallButtonModel {
-      Action="Edit",
-      ButtonType="btn-primary",
-      Glyph="pencil",
+      Action = "Edit",
+      ButtonType = "btn-primary",
+      Glyph = "pencil",
       Text = "Edit button",
-      Id = Model.Id,
-      ItemId=Model.ItemId,
-      ProductId =Model.ProductId,
-      SubscriptionId = Model.SubscriptionId
-  }
-  )
-    @Html.Partial("_SmallButtonPartial",
-  new SmallButtonModel
-  {
-      Action = "Details",
-      ButtonType = "btn-success",
-      Glyph = "list",
-      Text = "Detail button",
       Id = Model.Id,
       ItemId = Model.ItemId,
       ProductId = Model.ProductId,
-      SubscriptionId = Model.SubscriptionId
+      SubscriptionId = Model.SubscriptionId,
+      UserId = Model.UserId
+    }
+  )
+@if (Model.UserId == null || Model.UserId.Equals(string.Empty))
+{
+    @Html.Partial("_SmallButtonPartial",
+      new SmallButtonModel
+      {
+          Action = "Details",
+          ButtonType = "btn-success",
+          Glyph = "list",
+          Text = "Detail button",
+          Id = Model.Id,
+          ItemId = Model.ItemId,
+          ProductId = Model.ProductId,
+          SubscriptionId = Model.SubscriptionId,
+          UserId = Model.UserId
+
+      }
+      )
+}
+    @if (Model.UserId != null && !Model.UserId.Equals(string.Empty))
+    { 
+    @Html.Partial("_SmallButtonPartial",
+  new SmallButtonModel
+  {
+      Action = "Subscriptions",
+      ButtonType = "btn-info",
+      Glyph = "list",
+      Text = "Subscriptions",
+      Id = Model.Id,
+      ItemId = Model.ItemId,
+      ProductId = Model.ProductId,
+      SubscriptionId = Model.SubscriptionId,
+      UserId = Model.UserId
+
   }
   )
+  }
+
     @Html.Partial("_SmallButtonPartial",
   new SmallButtonModel
   {
@@ -39,7 +64,9 @@
       Id = Model.Id,
       ItemId = Model.ItemId,
       ProductId = Model.ProductId,
-      SubscriptionId = Model.SubscriptionId
+      SubscriptionId = Model.SubscriptionId,
+      UserId = Model.UserId
+
   }
   )
   </div>
