@@ -1,5 +1,8 @@
 ﻿@model IEnumerable<MVCTraining.Models.UserViewModel>
 
+@using MVCTraining.Areas.Admin.Models;
+
+
 @{
     ViewBag.Title = "Users & Subscriptions";
 }
@@ -9,7 +12,7 @@
 @if(Request.IsAuthenticated && User.IsInRole("Admin"))
 { 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.Partial("_CreateButtonPartial")
 </p>
 <table class="table">
     <tr>
@@ -32,10 +35,11 @@
             @Html.DisplayFor(modelItem => item.FirstName)
         </td>
       
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
+       
+
+            @Html.Partial("_TableButtonsPartial",
+               new SmallButtonModel { UserId = item.Id })
+        
     </tr>
 }
 
