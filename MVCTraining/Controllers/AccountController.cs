@@ -11,7 +11,6 @@ using Microsoft.Owin.Security;
 using MVCTraining.Models;
 using System.Collections.Generic;
 using MVCTraining.Extensions;
-using System.Net;
 
 namespace MVCTraining.Controllers
 {
@@ -529,26 +528,6 @@ namespace MVCTraining.Controllers
             return View(model);
         }
 
-        [Authorize(Roles = "Admin")]
-        public async Task<ActionResult> Edit(string userId)
-        {
-            if (userId == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ApplicationUser user = await UserManager.FindByIdAsync(userId);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
 
-
-            user.ItemTypes = await db.ItemTypes.ToListAsync();
-            user.Parts = await db.Parts.ToListAsync();
-            user.Sections = await db.Sections.ToListAsync();
-
-
-            return View(user);
-        }
     }
 }
