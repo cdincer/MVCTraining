@@ -554,5 +554,52 @@ namespace MVCTraining.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult> Edit(UserViewModel model)
+        {
+            try
+            {
+                if (model == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+
+                if (ModelState.IsValid)
+                {
+                    var user = await UserManager.FindByIdAsync(model.Id);
+                    if (user != null)
+                    {
+                        user.Email = model.Email;
+                        user.UserName = model.Email;
+                        user.FirstName = model.FirstName;
+                        //Check if the password changed if it is, hash it again and send it to DB.
+                        if (!user.PasswordHash.Equals(model.Password))
+                            user.PasswordHash = UserManager.PasswordHasher.HashPassword(model.Password);
+
+                        var result = await UserManager.UpdateAsync(user);
+
+                        if (result.Succeeded)
+                        {
+                            return RedirectToAction("Index", "Account");
+                        }
+                        AddErrors(result);
+
+
+
+                    }
+
+                }
+
+            }
+            catch
+            {
+
+
+            }
+
+            return View(model);
+        }
     }
 }
