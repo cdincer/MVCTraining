@@ -601,5 +601,69 @@ namespace MVCTraining.Controllers
 
             return View(model);
         }
+
+
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult> Delete(string userId)
+        {
+            if (userId == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ApplicationUser user = await UserManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+
+            var model = new UserViewModel
+            {
+                Email = user.Email,
+                FirstName = user.FirstName,
+                Id = user.Id,
+                Password = "Password"
+            };
+
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult> Delete(UserViewModel model)
+        {
+            try
+            {
+                if (model == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+
+                if (ModelState.IsValid)
+                {
+                    var user = await UserManager.FindByIdAsync(model.Id);
+                    var result = await UserManager.DeleteAsync(user);
+
+                    if (result.Succeeded)
+                    {
+                        var Db = new ApplicationDbContext();
+                        var Subs = Db.UserSubscriptions.Where(p => p.UserId.Equals(user.Id));
+                        Db.UserSubscriptions.RemoveRange(Subs);
+                        await Db.SaveChangesAsync();
+                        return RedirectToAction("Index", "Account");
+                    }
+                    AddErrors(result);
+                }
+
+            }
+            catch
+            {
+
+
+            }
+
+            return View(model);
+        }
     }
 }
