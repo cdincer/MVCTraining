@@ -33,5 +33,6 @@ namespace MVCTraining.Models
         {
             return new ApplicationDbContext();
         }
+
     }
 }
