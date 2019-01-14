@@ -10,10 +10,17 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>UserSubscriptionViewModel</h4>
+        <h4>Add Subscription To User</h4>
         <hr />
+        @if (Model.DisableDropDown)
+        {
+            <div><strong> User has all the subscriptions</strong></div>
+            <br />
+        }
+        else
+        {
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         <div class="form-group">
@@ -31,6 +38,7 @@
                 <input type="submit" value="Save" class="btn btn-success btn-sm" />
             </div>
         </div>
+        }
     </div>
 }
 
