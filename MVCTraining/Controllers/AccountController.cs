@@ -742,5 +742,35 @@ namespace MVCTraining.Controllers
         }
 
 
+
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult> RemoveUserSubscription(string userId,int subscriptionId)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(userId) || subscriptionId <=0 )
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+
+                if (ModelState.IsValid)
+                {
+
+                    var Db = new ApplicationDbContext();
+                    var subscriptions = Db.UserSubscriptions.Where(us => us.UserId.Equals(userId) && us.SubscriptionId.Equals(subscriptionId));
+                    Db.UserSubscriptions.RemoveRange(subscriptions);
+
+                    await Db.SaveChangesAsync();
+                }
+
+            }
+            catch
+            {
+
+
+            }
+
+            return RedirectToAction("Subscriptions", "Account", new { userId = userId });
+        }
     }
 }
