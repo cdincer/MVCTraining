@@ -1,4 +1,17 @@
 ﻿.navbar {
-    border-bottom:1px solid #C8C8C8;
-    background-color:#FFF;
+    border-bottom: 1px solid #C8C8C8;
+    background-color: #FFF;
 }
+
+.nav a {
+    color: #555;
+}
+
+
+    .nav a:hover {
+        color: #72C02C;
+    }
+
+      .nav > li > a:hover {
+        background-color: white;
+    }
