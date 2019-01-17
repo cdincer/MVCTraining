@@ -15,3 +15,15 @@
       .nav > li > a:hover {
         background-color: white;
     }
+
+.navbar-nav > li > a {
+    margin-top:25px;
+    padding-top:25px;
+    max-height:30px;
+    background-color: white;
+    }
+
+
+.body-content {
+margin-top:40px;
+}
