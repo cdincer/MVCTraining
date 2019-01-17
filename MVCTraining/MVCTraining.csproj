@@ -248,8 +248,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Images\Untitled.png" />
-    <Content Include="Content\Logos\Untitled.png" />
+    <Content Include="Content\Logos\Untitled - 150x84.png" />
+    <Content Include="Content\Logos\Untitled - 200x112.png" />
     <Content Include="Content\navbar.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -376,6 +376,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\ProductTypes\" />
+    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
