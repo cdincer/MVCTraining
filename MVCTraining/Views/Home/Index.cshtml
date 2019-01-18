@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<MVCTraining.Models.ThumbnailAreaModel>
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -6,9 +7,10 @@
 
     @if (User.Identity.IsAuthenticated)
     {
-        <div class="col-xs12">
-            <h2>A user is logged in</h2>
-        </div>
+        foreach (var area in Model)
+        {
+        @Html.Partial("_ThumbnailAreaPartial",area);
+        }
     }
     else
     {

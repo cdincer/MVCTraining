@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCTraining.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,13 @@ namespace MVCTraining.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var model = new List<ThumbnailAreaModel>();
+            model.Add(new ThumbnailAreaModel
+            {
+                Title ="Area Title",
+                Thumbnails = new List<ThumbnailModel>()
+            });
+            return View(model);
         }
 
         public ActionResult About()
