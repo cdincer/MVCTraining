@@ -221,6 +221,7 @@
     <Compile Include="Extensions\ICollectionExtensions.cs" />
     <Compile Include="Extensions\IdentityExtensions.cs" />
     <Compile Include="Extensions\ReflectionExtensions.cs" />
+    <Compile Include="Extensions\ThumbnailExtensions.cs" />
     <Compile Include="Models\Entities\Item.cs" />
     <Compile Include="Models\Entities\ItemType.cs" />
     <Compile Include="Models\Entities\Part.cs" />
