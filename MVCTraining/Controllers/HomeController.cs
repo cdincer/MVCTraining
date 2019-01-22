@@ -5,20 +5,29 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using MVCTraining.Extensions;
+using System.Threading.Tasks;
 
 namespace MVCTraining.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
             var userId = Request.IsAuthenticated ? HttpContext.User.Identity.GetUserId() : null;
+            var thumbnails = await new List<ThumbnailModel>().GetProductThumbnailsAsync(userId);
+            var count = thumbnails.Count() / 4;
+
             var model = new List<ThumbnailAreaModel>();
+            for (int i = 0; i <= count; i++)
+            { 
             model.Add(new ThumbnailAreaModel
             {
-                Title ="Area Title",
-                Thumbnails = new List<ThumbnailModel>()
+                Title = i.Equals(0) ? "My Content" : string.Empty,
+                Thumbnails = thumbnails.Skip(i * 4).Take(4)
             });
+
+            }
             return View(model);
         }
 
