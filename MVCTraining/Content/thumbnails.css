@@ -2,3 +2,59 @@
     margin:  0px 0px 15px;
     border-bottom:2px solid #72C02C;
 }
+
+.thumbnail {
+padding:5px;
+}
+
+.thumbnail .tag {
+padding:1px 6px;
+right: -10px;
+color:#0094ff;
+display:inline-block;
+position:absolute;
+}
+
+    .thumbnail .thumbnail-container {
+
+    position:relative
+    }
+
+    .thumbnail .text-tag {
+background-color:green;
+bottom:5px;
+}
+
+
+        .thumbnail .content-tag {
+background-color:orangered;
+top:5px;
+}
+
+        .thumbnail .thumbnail-img-container {
+overflow:hidden;
+}
+
+thumbnail .thumbnail-img {
+    width:100%;
+    height:auto;
+}
+
+
+thumbnail a,a:focus, a:hover,a:active {
+   outline:0px none !important;
+   text-decoration:none;
+}
+
+
+thumbnail > a:focus, a:hover,a:active {
+   color:antiquewhite;
+}
+
+@media screen and (min-width: 480px) {
+
+.thumbnail {
+
+max-width:260px;
+       }
+}
