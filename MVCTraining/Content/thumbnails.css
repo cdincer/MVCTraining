@@ -58,3 +58,21 @@ thumbnail > a:focus, a:hover,a:active {
 max-width:260px;
        }
 }
+
+.thumbnail .hover-effect {
+    transition:all 0.4s ease-in-out;
+       }
+
+
+.thumbnail a.text-tag:hover {
+box-shadow:0px 0px 0px 2px #72C02C;
+
+}
+
+
+
+.thumbnail:hover  a.text-tag{
+right:5px;
+
+}
+
