@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCTraining.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,7 +14,11 @@ namespace MVCTraining.Controllers
         // GET: ProductContent
         public async Task<ActionResult>  Index(int id)
         {
-            return View();
+            var model = new ProductSectionModel {
+                Title="The title",
+                Sections = new List<ProductSection>()
+            };
+            return View(model);
         }
     }
 }
