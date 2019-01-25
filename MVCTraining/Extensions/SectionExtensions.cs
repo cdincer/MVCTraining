@@ -11,7 +11,7 @@ namespace MVCTraining.Extensions
 {
     public static class SectionExtensions
     {
-        public static async Task<ProductSectionModel> GetproductSectionsAsync(int productId,string userId)
+        public static async Task<ProductSectionModel> GetProductSectionsAsync(int productId,string userId)
         {
 
             var db = ApplicationDbContext.Create();

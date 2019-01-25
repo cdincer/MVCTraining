@@ -1,4 +1,5 @@
-﻿using MVCTraining.Models;
+﻿using MVCTraining.Extensions;
+using MVCTraining.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +15,11 @@ namespace MVCTraining.Controllers
         // GET: ProductContent
         public async Task<ActionResult>  Index(int id)
         {
-            var model = new ProductSectionModel {
-                Title="The title",
-                Sections = new List<ProductSection>()
-            };
-            return View(model);
+            var userId = Request.IsAuthenticated ? HttpContext.GetUserId() : null;
+
+            var sections = await SectionExtensions.GetProductSectionsAsync(id,userId);
+
+            return View(sections);
         }
     }
 }
