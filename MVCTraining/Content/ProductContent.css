@@ -1,0 +1,14 @@
+﻿.pc-headline {
+    border-bottom:none;
+}
+
+.pc-headline h2 , .pc-headline h3 ,.pc-headline h4 {
+    margin-right:0px 0px -2px;
+    border-bottom:2px solid #00ff21;
+    padding-bottom:5px;
+    display:inline-block;
+}
+
+    .pc-headline h2 {
+        font-size:22px;
+    }

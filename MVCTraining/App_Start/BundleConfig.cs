@@ -31,6 +31,7 @@ namespace MVCTraining
                         "~/Scripts/AdminMenu.js"));
             bundles.Add(new StyleBundle("~/Content/membership").Include(
                       "~/Content/navbar.css",
+                       "~/Content/ProductContent.css",
                       "~/Content/thumbnails.css"));
         }
     }
