@@ -4,6 +4,7 @@ namespace MVCTraining.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using Training.Entities;
 
     internal sealed class Configuration : DbMigrationsConfiguration<MVCTraining.Models.ApplicationDbContext>
     {
@@ -28,6 +29,40 @@ namespace MVCTraining.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+
+            context.ItemTypes.AddOrUpdate(p => p.Title, new ItemType
+            {
+                Title = "Test Item Type 1"
+            }, new ItemType
+            {
+                Title = "Test Item Type 2"
+            },
+             new ItemType
+             {
+                 Title = "Test Item Type 3"
+             }, new ItemType
+             {
+                 Title = "Test Item Type 4"
+             }
+            );
+
+
+            context.Sections.AddOrUpdate(p => p.Title, new Section
+            {
+                Title = "Test Section  1"
+            }, new Section
+            {
+                Title = "Test Section  2"
+            },
+        new Section
+        {
+            Title = "Test Section  3"
+        }, new Section
+        {
+            Title = "Test Section  4"
+        }
+       );
         }
     }
 }
