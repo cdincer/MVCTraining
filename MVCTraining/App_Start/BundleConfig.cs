@@ -32,7 +32,8 @@ namespace MVCTraining
             bundles.Add(new StyleBundle("~/Content/membership").Include(
                       "~/Content/navbar.css",
                        "~/Content/ProductContent.css",
-                      "~/Content/thumbnails.css"));
+                      "~/Content/thumbnails.css",
+                      "~/Content/Carret.css"));
         }
     }
 }

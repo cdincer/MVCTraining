@@ -63,6 +63,24 @@ namespace MVCTraining.Migrations
             Title = "Test Section  4"
         }
        );
+
+
+
+            context.Parts.AddOrUpdate(p => p.Title, new Part
+            {
+                Title = "Test Part  1"
+            }, new Part
+            {
+                Title = "Test Part  2"
+            },
+        new Part
+        {
+            Title = "Test Part  3"
+        }, new Part
+        {
+            Title = "Test Part  4"
+        }
+       );
         }
     }
 }
