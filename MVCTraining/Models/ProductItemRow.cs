@@ -14,7 +14,7 @@ namespace MVCTraining.Models
         public string Description { get; set; }
         public bool IsDownload { get; set; }
         public bool IsAvaliable { get; set; }
-        public DateTime ReleaseDate { get; set; }
+        public DateTime? ReleaseDate { get; set; }
 
 
     }
