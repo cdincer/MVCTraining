@@ -21,13 +21,19 @@ namespace MVCTraining.Extensions
                                   join i in db.Items on pi.ItemId equals i.Id
                                   join s in db.Sections on i.SectionId equals s.Id
                                   where p.Id.Equals(productId)
-                                  orderby s.Title
+                                  orderby s.Id
                                   select new ProductSection
                                   {
                                       Id = s.Id,
                                       ItemTypeId = i.ItemTypeId,
                                       Title = s.Title
                                   }).ToListAsync();
+
+            foreach (var section in sections)
+            {
+                section.Items = await GetProductItemRowsAsync(productId, section.Id, section.ItemTypeId, userId);
+
+            }
 
             var result = sections.Distinct(new ProductSectionEqualityComparer()).ToList();
 
