@@ -62,6 +62,10 @@ namespace MVCTraining.Migrations
         {
             Title = "Test Section  4"
         }
+        , new Section
+        {
+            Title = "Downloads"
+        }
        );
 
 
