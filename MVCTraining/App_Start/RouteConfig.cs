@@ -13,6 +13,13 @@ namespace MVCTraining
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            routes.MapRoute(
+                name: "ProductContent",
+                url: "{controller}/{action}/{productId}/{itemId}",
+                defaults: new { controller = "Home", action = "Index" }
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
