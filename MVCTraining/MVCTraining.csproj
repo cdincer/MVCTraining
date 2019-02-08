@@ -277,8 +277,8 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\AdminMenu.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\thirdparty\bootstrap.js" />
+    <Content Include="Scripts\thirdparty\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -290,19 +290,19 @@
     <Content Include="Areas\Admin\Views\Section\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Section\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Section\Index.cshtml" />
-    <Content Include="Scripts\video.dev.js" />
-    <Content Include="Scripts\video.js" />
-    <Content Include="Scripts\vjs-lang\de.js" />
-    <Content Include="Scripts\vjs-lang\es.js" />
-    <Content Include="Scripts\vjs-lang\fr.js" />
-    <Content Include="Scripts\vjs-lang\it.js" />
-    <Content Include="Scripts\vjs-lang\ja.js" />
-    <Content Include="Scripts\vjs-lang\ko.js" />
-    <Content Include="Scripts\vjs-lang\nl.js" />
-    <Content Include="Scripts\vjs-lang\pt-BR.js" />
-    <Content Include="Scripts\vjs-lang\ru.js" />
-    <Content Include="Scripts\vjs-lang\uk.js" />
-    <Content Include="Scripts\vjs-lang\zh.js" />
+    <Content Include="Scripts\thirdparty\video.dev.js" />
+    <Content Include="Scripts\thirdparty\video.js" />
+    <Content Include="Scripts\thirdparty\vjs-lang\de.js" />
+    <Content Include="Scripts\thirdparty\vjs-lang\es.js" />
+    <Content Include="Scripts\thirdparty\vjs-lang\fr.js" />
+    <Content Include="Scripts\thirdparty\vjs-lang\it.js" />
+    <Content Include="Scripts\thirdparty\vjs-lang\ja.js" />
+    <Content Include="Scripts\thirdparty\vjs-lang\ko.js" />
+    <Content Include="Scripts\thirdparty\vjs-lang\nl.js" />
+    <Content Include="Scripts\thirdparty\vjs-lang\pt-BR.js" />
+    <Content Include="Scripts\thirdparty\vjs-lang\ru.js" />
+    <Content Include="Scripts\thirdparty\vjs-lang\uk.js" />
+    <Content Include="Scripts\thirdparty\vjs-lang\zh.js" />
     <Content Include="Views\Shared\_BackToListButtonPartial.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_EditButtonPartial.cshtml" />
     <Content Include="Views\Shared\_CreateButtonPartial.cshtml" />
@@ -358,17 +358,17 @@
     <Content Include="fonts\vjs.ttf" />
     <Content Include="fonts\vjs.eot" />
     <Content Include="Content\video-js.less" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
+    <None Include="Scripts\thirdparty\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\thirdparty\jquery-1.10.2.js" />
+    <Content Include="Scripts\thirdparty\jquery-1.10.2.min.js" />
+    <None Include="Scripts\thirdparty\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\thirdparty\jquery.validate.js" />
+    <Content Include="Scripts\thirdparty\jquery.validate.min.js" />
+    <Content Include="Scripts\thirdparty\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\thirdparty\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\thirdparty\modernizr-2.6.2.js" />
+    <Content Include="Scripts\thirdparty\respond.js" />
+    <Content Include="Scripts\thirdparty\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -425,7 +425,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\thirdparty\jquery-1.10.2.min.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
