@@ -64,7 +64,7 @@ namespace MVCTraining.Extensions
                                join pi in db.ProductItems on i.Id equals pi.ItemId
                                join sp in db.SubscriptionProducts on pi.ProductId equals sp.ProductId
                                join us in db.UserSubscriptions on sp.SubscriptionId equals us.SubscriptionId
-                               where i.SectionId.Equals(sectionId) && i.ItemTypeId.Equals(itemTypeId)
+                               where i.SectionId.Equals(sectionId) 
                                && pi.ProductId.Equals(productId)
                                && us.UserId.Equals(userId)
                                orderby i.PartId
@@ -73,7 +73,7 @@ namespace MVCTraining.Extensions
                                    ItemId = i.Id,
                                    Description = i.Description,
                                    Title = i.Title,
-                                   Link = "/ProductContent/Content/" + pi.ProductId + "/" + i.Id,
+                                   Link = it.Title.Equals("Download") ? i.Url: "/ProductContent/Content/" + pi.ProductId + "/" + i.Id,
                                    ImageUrl = i.ImageUrl,
                                    ReleaseDate = DbFunctions.CreateDateTime(us.startDate.Value.Year,
                                    us.startDate.Value.Month, us.startDate.Value.Day + i.WaitDays, 0, 0, 0),

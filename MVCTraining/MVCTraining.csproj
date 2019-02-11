@@ -359,6 +359,7 @@
     <Content Include="fonts\vjs.ttf" />
     <Content Include="fonts\vjs.eot" />
     <Content Include="Content\video-js.less" />
+    <Content Include="Content\Documents\test_pdf.pdf" />
     <None Include="Scripts\thirdparty\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\thirdparty\jquery-1.10.2.js" />
     <Content Include="Scripts\thirdparty\jquery-1.10.2.min.js" />
@@ -415,6 +416,7 @@
     <Content Include="Views\ProductContent\Index.cshtml" />
     <Content Include="Views\ProductContent\ProductSectionPartial.cshtml" />
     <Content Include="Views\ProductContent\_ProductItemRowPartial.cshtml" />
+    <Content Include="Views\ProductContent\Content.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
