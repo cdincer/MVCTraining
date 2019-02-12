@@ -80,6 +80,7 @@ namespace MVCTraining.Extensions
                                    IsAvaliable = DbFunctions.CreateDateTime(today.Year,
                                   today.Month, today.Day, 0, 0, 0) >= DbFunctions.CreateDateTime(us.startDate.Value.Year,
                                    us.startDate.Value.Month, us.startDate.Value.Day + i.WaitDays, 0, 0, 0),
+                                   IsDownload = it.Title.Equals("Download")
 
                                }).ToListAsync();
             return items;
@@ -103,5 +104,8 @@ namespace MVCTraining.Extensions
                           ).FirstOrDefaultAsync();
 
         }
+
+
+
     }
 }
