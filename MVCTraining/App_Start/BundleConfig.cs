@@ -39,7 +39,8 @@ namespace MVCTraining
                       "~/Content/navbar.css",
                        "~/Content/ProductContent.css",
                       "~/Content/thumbnails.css",
-                      "~/Content/Carret.css"));
+                      "~/Content/Carret.css",
+                       "~/Content/RegisterCode.css"));
         }
     }
 }
