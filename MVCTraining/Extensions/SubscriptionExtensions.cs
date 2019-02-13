@@ -38,23 +38,29 @@ namespace MVCTraining.Extensions
         public static async Task Register(this IDbSet<UserSubscription> userSubscription,
                                          int subscriptionId, string userId)
         {
-            if (userSubscription == null || subscriptionId.Equals(Int32.MinValue) || userId.Equals(string.Empty))
-                return;
-
-            var exist = await Task.Run(() => userSubscription.CountAsync(
-                s => s.SubscriptionId.Equals(subscriptionId) && s.UserId.Equals(userId))) > 0;
-
-            if (!exist)
+            try
             {
-                await Task.Run(() => userSubscription.Add(
-                    new UserSubscription {
-                        UserId = userId,
-                        SubscriptionId = subscriptionId,
-                        startDate = DateTime.Now,
-                         endDate = DateTime.MaxValue
+                if (userSubscription == null || subscriptionId.Equals(Int32.MinValue) || userId.Equals(string.Empty))
+                    return;
 
-                    }));
+                var exist = await Task.Run(() => userSubscription.CountAsync(
+                    s => s.SubscriptionId.Equals(subscriptionId) && s.UserId.Equals(userId))) > 0;
+
+                if (!exist)
+                {
+                    await Task.Run(() => userSubscription.Add(
+                        new UserSubscription
+                        {
+                            UserId = userId,
+                            SubscriptionId = subscriptionId,
+                            startDate = DateTime.Now,
+                            endDate = DateTime.MaxValue
+
+                        }));
+                }
             }
+            catch
+            { }
 
         }
 
