@@ -21,7 +21,9 @@ namespace MVCTraining.Extensions
                     return Int32.MinValue;
                 }
 
-
+                var subscriptionId = await (from s in subscription
+                                            where s.RegistrationCode.Equals(code)
+                                            select s.Id).FirstOrDefaultAsync();
             }
             catch
             {
