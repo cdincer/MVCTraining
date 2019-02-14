@@ -294,6 +294,7 @@
     <Content Include="Areas\Admin\Views\Section\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Section\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Section\Index.cshtml" />
+    <Content Include="Scripts\thirdparty\RegisterCode.js" />
     <Content Include="Scripts\thirdparty\video.dev.js" />
     <Content Include="Scripts\thirdparty\video.js" />
     <Content Include="Scripts\thirdparty\vjs-lang\de.js" />
