@@ -265,6 +265,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Carret.css" />
     <Content Include="Content\RegisterCode.css" />
+    <Content Include="Content\RegisterUser.css" />
     <Content Include="Content\video-js.css" />
     <Content Include="Content\video-js.min.css" />
     <Content Include="Content\video-js.swf" />
