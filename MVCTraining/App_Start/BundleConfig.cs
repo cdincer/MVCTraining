@@ -33,7 +33,8 @@ namespace MVCTraining
             bundles.Add(new ScriptBundle("~/bundles/UI").Include(
                       "~/Scripts/Carret.js",
                         "~/Scripts/thirdparty/video.dev.js",
-                        "~/Scripts/thirdparty/video.js"));
+                        "~/Scripts/thirdparty/video.js",
+                        "~/Scripts/thirdparty/RegisterCode.js"));
 
             bundles.Add(new StyleBundle("~/Content/membership").Include(
                       "~/Content/navbar.css",
