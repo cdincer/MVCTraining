@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<MVCTraining.Models.ThumbnailAreaModel>
+@using MVCTraining.Models
 @{
     ViewBag.Title = "Home Page";
 }
@@ -18,9 +19,8 @@
         <div class="col-lg9 col-md-8 col-sm-7">
             <h2>Please log in </h2>
         </div>
-        //Right Column
         <div class="col-lg3 col-md-4 col-sm-5">
-           @*Will add registration component here*@
+            @Html.Partial("_RegisterUserPartial", new RegisterUserModel { Email = "", Name = "", Password = "" })
         </div>
     }
     <div class="row">

@@ -423,7 +423,7 @@
     <Content Include="Views\ProductContent\_ProductItemRowPartial.cshtml" />
     <Content Include="Views\ProductContent\Content.cshtml" />
     <Content Include="Views\Shared\_RegisterCodePartial.cshtml" />
-    <Content Include="Views\Shared\_RegisterUserParial.cshtml" />
+    <Content Include="Views\Shared\_RegisterUserPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
