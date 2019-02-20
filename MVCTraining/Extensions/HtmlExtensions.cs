@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MVCTraining.Controllers
+namespace MVCTraining.Extensions
 {
     public static class HtmlExtensions
     {
-        public static MvcHtmlString GlypgLink(this HtmlHelper htmlHelper,string controller,string action,string text, string glyphicon,string cssClasses="",string id="")
+        public static MvcHtmlString GlyphLink(this HtmlHelper htmlHelper,string controller,string action,string text, string glyphicon,string cssClasses="",string id="")
         {
             //declare a span for the glyphicon
             var glyph = string.Format("<span class='glyphicon glyphicon-{0}></span>'", glyphicon);

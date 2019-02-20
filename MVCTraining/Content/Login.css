@@ -1,2 +1,11 @@
-﻿body {
+﻿a[data-logout-button] {
+    color:white;
 }
+
+
+.nav > li > a[data-logout-button]:hover {
+    color:white;
+    background-color:orangered;
+    border-color:orangered;
+}
+
