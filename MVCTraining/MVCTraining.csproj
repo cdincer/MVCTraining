@@ -265,6 +265,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Carret.css" />
+    <Content Include="Content\Login.css" />
     <Content Include="Content\RegisterCode.css" />
     <Content Include="Content\RegisterUser.css" />
     <Content Include="Content\video-js.css" />
@@ -284,6 +285,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\AdminMenu.js" />
+    <Content Include="Scripts\Login.js" />
     <Content Include="Scripts\RegisterUser.js" />
     <Content Include="Scripts\thirdparty\bootstrap.js" />
     <Content Include="Scripts\thirdparty\bootstrap.min.js" />
