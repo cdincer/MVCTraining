@@ -11,7 +11,7 @@ namespace MVCTraining.Extensions
         public static MvcHtmlString GlyphLink(this HtmlHelper htmlHelper,string controller,string action,string text, string glyphicon,string cssClasses="",string id="")
         {
             //declare a span for the glyphicon
-            var glyph = string.Format("<span class='glyphicon glyphicon-{0}></span>'", glyphicon);
+            var glyph = string.Format("<span class='glyphicon glyphicon-{0}'></span>", glyphicon);
 
 
             //declare the anchor tag
