@@ -1,6 +1,6 @@
 ﻿.navbar {
     border-bottom: 1px solid #C8C8C8;
-    background-color: #FFF;
+    background-color: #4765A0;
 }
 
 .nav a {
@@ -13,14 +13,14 @@
     }
 
       .nav > li > a:hover {
-        background-color: white;
+        background-color: #4765A0;
     }
 
 .navbar-nav > li > a {
     margin-top:25px;
     padding-top:25px;
     max-height:30px;
-    background-color: white;
+    background-color: #4765A0;
     }
 
 
