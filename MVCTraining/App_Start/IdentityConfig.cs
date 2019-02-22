@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using MVCTraining.Models;
+using MVCTraining.Extensions;
 
 namespace MVCTraining
 {
@@ -19,6 +20,7 @@ namespace MVCTraining
         public Task SendAsync(IdentityMessage message)
         {
             // Plug in your email service here to send an email.
+            message.Send();
             return Task.FromResult(0);
         }
     }

@@ -36,7 +36,8 @@ namespace MVCTraining
                         "~/Scripts/thirdparty/video.js",
                         "~/Scripts/thirdparty/RegisterCode.js",
                         "~/Scripts/RegisterUser.js",
-                        "~/Scripts/Login.js"));
+                        "~/Scripts/Login.js",
+                        "~/Scripts/forgot-password.js"));
 
             bundles.Add(new StyleBundle("~/Content/membership").Include(
                       "~/Content/navbar.css",
@@ -45,7 +46,8 @@ namespace MVCTraining
                       "~/Content/Carret.css",
                       "~/Content/RegisterCode.css",
                       "~/Content/RegisterUser.css",
-                       "~/Content/Login.css"));
+                       "~/Content/Login.css",
+                       "~/Content/forgot-password.css"));
         }
     }
 }
