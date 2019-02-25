@@ -21,6 +21,8 @@
         </div>
         <div class="col-lg3 col-md-4 col-sm-5">
             @Html.Partial("_RegisterUserPartial", new RegisterUserModel { Email = "", Name = "", Password = "" })
+            @Html.Partial("_ForgotPasswordPanelPartial", new ForgotPasswordViewModel { Email = ""})
+
         </div>
     }
     <div class="row">
