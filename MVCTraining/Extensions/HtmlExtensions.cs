@@ -16,7 +16,11 @@ namespace MVCTraining.Extensions
         {
             //declare a span for the glyphicon
             var glyph = string.Format("<span class='glyphicon glyphicon-{0}'></span>", glyphicon);
-    
+            if (text == "Pwd")
+            {
+                cssClasses = "special";
+
+            }
 
             //declare the anchor tag
             var anchor = new TagBuilder("a");

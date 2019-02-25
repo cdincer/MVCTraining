@@ -3,6 +3,9 @@
 }
 
 
+
+
+
 .nav > li > a[data-logout-button]:hover {
     color:white;
     background-color:orangered;
@@ -60,7 +63,7 @@ margin-right:10px;
 }
 
 
-[data-login-user-area]   .glyphicon-envelope, .glyphicon-lock{
+[data-login-user-area]   .glyphicon-envelope{
    padding-left:0px;
    border:none;
 background-color:white;
@@ -68,6 +71,13 @@ background-color:white;
 }
 
 
+#loginpartialpassword
+{
+   padding-left:0px;
+   border:none;
+background-color:white;
+
+}
 
 [data-login-user-area]   input[type=text].form-control,  input[type=password].form-control{
    
@@ -103,8 +113,4 @@ color:green;
     margin-top:12px;
     margin-left:27px;
 
-}
-
-.special {
-    background-color:#4765A0
 }
