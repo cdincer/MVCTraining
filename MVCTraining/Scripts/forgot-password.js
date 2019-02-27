@@ -18,11 +18,11 @@
 
         //alert(email + " " + antiforgery + " " + url);
 
-        $.post("/Account/ForgotPassword", new {__RequestVerificationToken:antiforgery,email: email},
+        $.post("/Account/ForgotPassword",  {__RequestVerificationToken:antiforgery,email: email},
             function (data)
             { 
                 location.href = url;
-            }).fail(function xhr,status,error){ location.href=url; });
+            }).fail(function (xhr,status,error){ location.href=url; });
     }
 
 });
